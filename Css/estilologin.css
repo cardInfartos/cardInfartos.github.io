@@ -1,0 +1,168 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+font-family: sans-serif;
+/*Que los tamaños, fondos y espacios se reduzcan, basicamente reducimos lo que la pagina nos da por predeterminado, y lo ajustaremos a nuestro gusto*/
+}
+body{
+    background-image: url(../Images/ECG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    /*Se Ajusta el fondo que quisimos poner, adaptandse a los tamaños de los dispostivos y asi que sea simétrico :>>>*/
+}
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;/*Para que se centre la webada*/
+    margin-top: 100px;
+    /*Le ponemos de espacio hacia arriba 100 pixeles para bajar todo el contenido*/
+}
+.contenedor__todo{
+width: 100%;/*Que ocupe el centro de toda la pagina pero a la vez no, por el max-width lo reducimos a 800 pixeles, la verdad ni lo entendí tampoco xd*/
+max-width: 800px;
+margin: auto;/*Para que se centre la webada*/
+
+position: relative;/*Esto es para las posiciones absolutas, esto para que se acoplen y no haya porblemas al momento de acomodar otras "cajas"*/
+
+}
+.caja__fondo{
+    width: 100%;
+    padding: 10px, 20px;/*los 10px son de arriba y abajo, esto para mantener un margen, y los 20px para margen de izquierda y derecha*/
+
+    display: flex;/*Esto para acomodar una "caja" a un lado de la otra, distribuir las columnas dentro del margen establecido*/
+
+    justify-content: center;/*centrar el contenido*/
+
+    backdrop-filter: blur(8px);/*Hacer un desenfoque para el diseño de la caja ¿Ya tienes una cuenta?,
+    algo innecesario pero bonito*/
+
+    background-color: rgba(37, 82, 95, 0.3);
+}
+.caja__fondo div{
+margin: 100px 40px; /*el margin es para añadir grosor para la "caja", ojo, NO PONGAN COMAS osea de estas "," xd*/
+color: white;
+transition: all 500ms;
+
+}
+.caja__fondo div p, .caja__fondo div button{
+margin-top: 30px;/*Espaciado para cada parrafo, cabeza (h3) y botón*/
+
+}
+.caja__fondo div h3{
+font-weight: 400; /*menos grosor en el fondo de letra*/
+font-size: 26px;/*Añadir tamaño de letra*/
+}
+
+.caja__fondo div p{
+    font-size: 16px;
+    font-weight: 300;
+}
+.caja__fondo button{
+    padding: 10px 40px;
+    border: 2px solid #fff; /*Crea un borde de n pixeles, si es solido, y de qué color*/
+    background: transparent; /*quita el fondo y lo pone transparente (el de la caja)*/
+    font-size: 14px; 
+    font-weight: 600; /*font size y font weight son para tamaño y grosor*/
+    cursor: pointer;/*Al momento de acercanos al boton, ambos pondran el cursor en apuntado, como si al momento de pasar se fuera a picar el botón */
+    color: white;
+    outline: none;/*Quitar el fondo que se marca cuando hacemos click*/
+    transition: all 300ms;/*una transicion para al hacer click se haga algo */
+}
+.caja__fondo button:hover{
+    background-color: #fff;
+    color: #46A2FD;
+ /*Y esto es algo, ya que el "hover" es para que si el puntero pasa por los botones, cambie de color el boton a la transicion que pusimos anteriormente, innecesario pero bonito :>>>>*/
+}
+
+/*//////Ahora siguen los formularios o datos a llenar/////*/
+.contenedor__login-registro {
+display: flex; /*separe los formularios y posicione de manera vertical los mismos (formularios)con ayuda del align-items */
+align-items: center;
+width: 100%;
+max-width: 380px;/*establecer el ancho de los formularios*/
+position: relative;
+top: -185px;/*le restamos 185 pixeles de arriba para acomodarlo a la par de la caja de fondo del registro*/
+left: 10px;/*para que nos dé un espacio de izquierda con respecto a la caja de fondo*/
+transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.27);
+}
+.contenedor__login-registro form{
+width: 100%;
+padding: 80px 20px;
+background-color: #fff;
+position: absolute; /*para poderlo mover (la caja)*/
+
+border-radius: 20px; /*genera un borde de radio, le quita 20 pixeles a todos los border*/
+
+}
+.contenedor__login-registro form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;/*para hacer espacio entre los input y botones*/
+    color:  rgb(23, 40, 71);
+
+}
+.contenedor__login-registro form input{
+    width: 100%;
+    margin-top: 20px;/*espacio entre los inputs*/
+    padding: 6px;/*tamaño de los inputs*/
+    border: none;/*recordemos, quitar bordes*/
+    background-color: #f2f2f2;/*fondo interior del input*/
+    font-size: 16px;
+    outline: none;
+}
+.contenedor__login-registro form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background:rgb(23, 40, 71);    
+    color: white;
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
+}
+.formulario__login{
+    opacity: 1;
+    display: block;
+}
+.formulario__registro{
+    display: none;
+}
+/*Adaptar las transiciones de acuerdo al tamaño, para que no se haga feo*/
+
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .caja__fondo{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__fondo div{
+        margin: 0px;
+        position: absolute;
+    }
+
+
+    /*Formularios*/
+
+    .contenedor__login-registro{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-registro form{
+        position: relative;
+    }
+}

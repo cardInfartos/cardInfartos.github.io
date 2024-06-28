@@ -10,6 +10,10 @@
 body{
     font-family: 'Poppins', serif;
     background-color: #c2b4b4;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
 }
 
 

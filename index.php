@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['usuario'])){
+    echo'
+    <script>
+    alert("Por favor, debes iniciar sesión");
+    window.location = "Registro.php";
+    </script>';
+  session_destroy();
+    die();
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,15 +57,25 @@
             <ul class="nav__link nav__link--menu">
             
                 <li class="nav__items">
-            <a href="Inicio.html" class="nav__links">Inicio</a>
+            <a href="Inicio1.html" class="nav__links">Inicio</a>
             </li>
 
             <li class="nav__items">
-                <a href="index.html" class="nav__links">Home</a>
+                <a href="index.php" class="nav__links">Home</a>
             </li>
-    
-
            
+
+            <li class="nav__items">
+            <a href="" class="nav__links">Historial</a>
+             </li>
+
+            <li class="nav__items">
+            <a href="" class="nav__links">Registro</a>
+            </li>
+            <li class="nav__items">
+            <a href="php/cerrar_sesion.php" class="nav__links">Cerrar Sesión</a>
+             </li>
+
             <img src="./Images/arrow.svg" alt="" class="nav__close">
 
             </ul>
@@ -60,7 +88,7 @@
         <section class="hero__container container">      
             <h1 class="hero_title">Bienvenido a Infartos.</h1>
             <p class="hero__paragraph">La plataforma donde puedes ver tu registro cardíaco y podrás salvar tu vida.</p>
-            <a href="Registro.php" class="cta">Inicia Sesión</a>
+            
         </section>
     </header>
 
